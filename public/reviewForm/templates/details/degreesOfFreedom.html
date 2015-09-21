@@ -1,0 +1,223 @@
+<div ng-controller="details.degreesOfFreedom" layout="column" class="cards">
+  <h1 flex class="md-title text-center heading">Step {{stepNumber}} of {{parts.length}}</h1>
+
+  <div flex question-card class="animate-show" ng-hide="landlordResidence.val">
+    <md-card>
+      <div class="question-wrapper" layout="column" layout-align="center center" layout-padding>
+        <h2 class="md-display-1 white-color text-center">
+          Is the Landlord/Warden staying in the same House ?
+        </h2>
+      </div>
+      <md-card-content layout="row" layout-align="center center">
+        <div class="yes-btn" ng-class="{'grayscale': ! landlordResidence.isVal('yes')}"
+            ng-click="landlordResidence.toggleVal('yes')"
+        >
+        </div>
+        <div class="no-btn" ng-class="{'grayscale': ! landlordResidence.isVal('no')}" offset="20"
+            ng-click="landlordResidence.toggleVal('no')"
+        >
+        </div>
+      </md-card-content>
+    </md-card>
+  </div>
+
+  <div flex question-card class="animate-show" ng-hide="liveInAllowed.val">
+    <md-card>
+      <div class="question-wrapper" layout="column" layout-align="center center" layout-padding>
+        <h2 class="md-display-1 white-color text-center">
+          Is Live-In Allowed ?
+        </h2>
+      </div>
+      <md-card-content layout="row" layout-align="center center">
+        <div class="yes-btn" ng-class="{'grayscale': ! liveInAllowed.isVal('yes')}"
+            ng-click="liveInAllowed.toggleVal('yes')"
+        >
+        </div>
+        <div class="no-btn" ng-class="{'grayscale': ! liveInAllowed.isVal('no')}" offset="20"
+            ng-click="liveInAllowed.toggleVal('no')"
+        >
+        </div>
+      </md-card-content>
+    </md-card>
+  </div>
+
+  <div flex question-card class="animate-show" ng-hide="drinkingAllowed.val">
+    <md-card>
+      <div class="question-wrapper" layout="column" layout-align="center center" layout-padding>
+        <h2 class="md-display-1 white-color text-center">
+          Is Drinking Allowed ?
+        </h2>
+      </div>
+      <md-card-content layout="row" layout-align="center center">
+        <div class="yes-btn" ng-class="{'grayscale': ! drinkingAllowed.isVal('yes')}"
+            ng-click="drinkingAllowed.toggleVal('yes')"
+        >
+        </div>
+        <div class="no-btn" ng-class="{'grayscale': ! drinkingAllowed.isVal('no')}" offset="20"
+            ng-click="drinkingAllowed.toggleVal('no')"
+        >
+        </div>
+      </md-card-content>
+    </md-card>
+  </div>
+
+  <div flex question-card class="animate-show" ng-hide="cookingNonVegAllowed.val">
+    <md-card>
+      <div class="question-wrapper" layout="column" layout-align="center center" layout-padding>
+        <h2 class="md-display-1 white-color text-center">
+          Is Cooking Non-Veg Allowed ?
+        </h2>
+      </div>
+      <md-card-content layout="row" layout-align="center center">
+        <div class="yes-btn" ng-class="{'grayscale': ! cookingNonVegAllowed.isVal('yes')}"
+            ng-click="cookingNonVegAllowed.toggleVal('yes')"
+        >
+        </div>
+        <div class="no-btn" ng-class="{'grayscale': ! cookingNonVegAllowed.isVal('no')}" offset="20"
+            ng-click="cookingNonVegAllowed.toggleVal('no')"
+        >
+        </div>
+      </md-card-content>
+    </md-card>
+  </div>
+
+  <div flex question-card class="animate-show" ng-hide="smokingAllowed.val">
+    <md-card flex question-card>
+      <div class="question-wrapper" layout="column" layout-align="center center" layout-padding>
+        <h2 class="md-display-1 white-color text-center">
+          Is Smoking Allowed ?
+        </h2>
+      </div>
+      <md-card-content layout="row" layout-align="center center">
+        <div class="yes-btn" ng-class="{'grayscale': ! smokingAllowed.isVal('yes')}"
+            ng-click="smokingAllowed.toggleVal('yes')"
+        >
+        </div>
+        <div class="no-btn" ng-class="{'grayscale': ! smokingAllowed.isVal('no')}" offset="20"
+            ng-click="smokingAllowed.toggleVal('no')"
+        >
+        </div>
+      </md-card-content>
+    </md-card>
+  </div>
+
+  <div flex question-card class="animate-show" ng-hide="partyingAllowed.val">
+    <md-card>
+      <div class="question-wrapper" layout="column" layout-align="center center" layout-padding>
+        <h2 class="md-display-1 white-color text-center">
+          Is Partying Allowed ?
+        </h2>
+      </div>
+      <md-card-content layout="row" layout-align="center center">
+        <div class="yes-btn" ng-class="{'grayscale': ! partyingAllowed.isVal('yes')}"
+            ng-click="partyingAllowed.toggleVal('yes')"
+        >
+        </div>
+        <div class="no-btn" ng-class="{'grayscale': ! partyingAllowed.isVal('no')}" offset="20"
+            ng-click="partyingAllowed.toggleVal('no')"
+        >
+        </div>
+      </md-card-content>
+    </md-card>
+  </div>
+
+  <div flex question-card class="animate-show" ng-hide="friendsComingOverAllowed.val">
+    <md-card>
+      <div class="question-wrapper" layout="column" layout-align="center center" layout-padding>
+        <h2 class="md-display-1 white-color text-center">
+          Is Friends Coming Over Allowed ?
+        </h2>
+      </div>
+      <md-card-content layout="row" layout-align="center center">
+        <div class="yes-btn" ng-class="{'grayscale': ! friendsComingOverAllowed.isVal('yes')}"
+            ng-click="friendsComingOverAllowed.toggleVal('yes')"
+        >
+        </div>
+        <div class="no-btn" ng-class="{'grayscale': ! friendsComingOverAllowed.isVal('no')}" offset="20"
+            ng-click="friendsComingOverAllowed.toggleVal('no')"
+        >
+        </div>
+      </md-card-content>
+    </md-card>
+  </div>
+
+  <div flex question-card class="animate-show"  ng-hide="familyComingOverAllowed.val">
+    <md-card>
+      <div class="question-wrapper" layout="column" layout-align="center center" layout-padding>
+        <h2 class="md-display-1 white-color text-center">
+          Is Family Coming Over Allowed ?
+        </h2>
+      </div>
+      <md-card-content layout="row" layout-align="center center">
+        <div class="yes-btn" ng-class="{'grayscale': ! familyComingOverAllowed.isVal('yes')}"
+            ng-click="familyComingOverAllowed.toggleVal('yes')"
+        >
+        </div>
+        <div class="no-btn" ng-class="{'grayscale': ! familyComingOverAllowed.isVal('no')}" offset="20"
+            ng-click="familyComingOverAllowed.toggleVal('no')"
+        >
+        </div>
+      </md-card-content>
+    </md-card>
+  </div>
+
+  <div flex question-card class="animate-show"  ng-hide="petsAllowed.val">
+    <md-card>
+      <div class="question-wrapper" layout="column" layout-align="center center" layout-padding>
+        <h2 class="md-display-1 white-color text-center">
+          Are Pets Allowed ?
+        </h2>
+      </div>
+      <md-card-content layout="row" layout-align="center center">
+        <div class="yes-btn" ng-class="{'grayscale': ! petsAllowed.isVal('yes')}"
+            ng-click="petsAllowed.toggleVal('yes')"
+        >
+        </div>
+        <div class="no-btn" ng-class="{'grayscale': ! petsAllowed.isVal('no')}" offset="20"
+            ng-click="petsAllowed.toggleVal('no')"
+        >
+        </div>
+      </md-card-content>
+    </md-card>
+  </div>
+
+  <div flex question-card class="animate-show"  ng-hide="comingLateNightAllowed.val">
+    <md-card>
+      <div class="question-wrapper" layout="column" layout-align="center center" layout-padding>
+        <h2 class="md-display-1 white-color text-center">
+          Is Coming in Late-Night Allowed ?
+        </h2>
+      </div>
+      <md-card-content layout="row" layout-align="center center">
+        <div class="yes-btn" ng-class="{'grayscale': ! comingLateNightAllowed.isVal('yes')}"
+            ng-click="comingLateNightAllowed.toggleVal('yes')"
+        >
+        </div>
+        <div class="no-btn" ng-class="{'grayscale': ! comingLateNightAllowed.isVal('no')}" offset="20"
+            ng-click="comingLateNightAllowed.toggleVal('no')"
+        >
+        </div>
+      </md-card-content>
+    </md-card>
+  </div>
+
+  <div flex question-card class="animate-show"  ng-hide="playingLoudMusicAllowed.val">
+    <md-card>
+      <div class="question-wrapper" layout="column" layout-align="center center" layout-padding>
+        <h2 class="md-display-1 white-color text-center">
+          Is Playing Loud Music Allowed ?
+        </h2>
+      </div>
+      <md-card-content layout="row" layout-align="center center">
+        <div class="yes-btn" ng-class="{'grayscale': ! playingLoudMusicAllowed.isVal('yes')}"
+            ng-click="playingLoudMusicAllowed.toggleVal('yes')"
+        >
+        </div>
+        <div class="no-btn" ng-class="{'grayscale': ! playingLoudMusicAllowed.isVal('no')}" offset="20"
+            ng-click="playingLoudMusicAllowed.toggleVal('no')"
+        >
+        </div>
+      </md-card-content>
+    </md-card>
+  </div>
+</div>

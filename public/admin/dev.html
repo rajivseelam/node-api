@@ -1,0 +1,84 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flatabout - Review From</title>
+    <meta name="viewport" content="initial-scale=1" />
+    <!-- Base stylesheets, which need to be loaded locally from the device -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.10.0/angular-material.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
+    <!-- Custom styles, will always come from server -->
+    <link rel="stylesheet" href="/admin/style.css">
+    <!-- Base scripts, will be loaded locally from device -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.10.0/angular-material.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.min.js"></script>
+    <!-- Angular Material Javascript now available via Google CDN; version 0.10 used here -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js"></script>
+    <!-- <script src="statics/cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js"></script> -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-material-icons/0.5.0/angular-material-icons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.0/lodash.js"></script>
+    <!-- Custom scripts which will always come from server -->
+    <script src="/admin/app.js"></script>
+</head>
+<style type="text/css">
+.fabSpeedDialdemoBasicUsage .text-capitalize {
+    text-transform: capitalize;
+}
+
+.fabSpeedDialdemoBasicUsage .md-fab:hover,
+.fabSpeedDialdemoBasicUsage .md-fab.md-focused {
+    background-color: #000 !important;
+}
+
+.fabSpeedDialdemoBasicUsage p.note {
+    font-size: 1.2rem;
+}
+
+.fabSpeedDialdemoBasicUsage .lock-size {
+    min-width: 300px;
+    min-height: 300px;
+    width: 300px;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.fabToolbardemoBasicUsage md-fab-toolbar.md-left md-fab-trigger.align-with-text {
+    left: 7px;
+}
+
+md-sidenav.md-sidenav-left.md-whiteframe-z4.md-closed.ng-isolate-scope.window-height.md-locked-open {
+    min-width: 30%;
+    max-width: 30%;
+    width: 85vw !important;
+}
+</style>
+<!-- apply our angular app to our site -->
+
+<body ng-app="app" ng-cloak>
+    <!-- NAVIGATION -->
+    <md-toolbar layout="row" class="md-whiteframe-z4">
+        <div class="md-toolbar-tools">
+            <md-button show-if-auth hide-gt-md class="md-icon-button" aria-label="menu" nav-toggle ng-click="toggleLeft()">
+                <ng-md-icon icon="reorder" style="fill:white"></ng-md-icon>
+            </md-button>
+            <h1>Flatabout</h1>
+            <span flex></span>
+            <md-button show-if-auth class="md-icon-button" aria-label="Logout" auth-status ng-click="logout()">
+                <ng-md-icon icon="logout" style="fill:white"></ng-md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+    <!-- MAIN CONTENT -->
+    <div layout="row" flex ng-controller="master">
+        <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT -->
+        <div ui-view flex></div>
+    </div>
+</body>
+
+</html>

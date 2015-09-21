@@ -1,0 +1,102 @@
+Reviewable,Tags,Questions,Owner,Tenant,Paying Guest,Hosteller
+Reviewer,Current residence,You are reviewing,1,1,1,1
+Reviewer,Previous residence,You are reviewing,1,1,1,1
+Reviewer,Someones else's residence,You are reviewing,1,1,1,1
+Type of Residents,Owner,Resident is,1,1,1,1
+Type of Residents,Tenant,Resident is,1,1,1,1
+Type of Residents,Paying Guest,Resident is,1,1,1,1
+Type of Residents,Hosteller,Resident is,1,1,1,1
+Duration,Duration,Duration of your stay,1,1,1,1
+Rent,Rent,Rent,0,1,1,1
+Number of residents,1,Number of residents,1,1,0,0
+Number of residents,2,Number of residents,1,1,0,0
+Number of residents,3,Number of residents,1,1,0,0
+Number of residents,3+,Number of residents,1,1,0,0
+Number of Roommates,1,Number of Roommates,0,0,1,1
+Number of Roommates,2,Number of Roommates,0,0,1,1
+Number of Roommates,3,Number of Roommates,0,0,1,1
+Number of Roommates,3+,Number of Roommates,0,0,1,1
+Number of Rooms,1 BHK,Type of Flat,1,1,0,0
+Number of Rooms,2 BHK,Type of Flat,1,1,0,0
+Number of Rooms,3 BHK,Type of Flat,1,1,0,0
+Number of Rooms,3+ BHK,Type of Flat,1,1,0,0
+Demography,Bachelors,Who can stay?,1,1,1,1
+Demography,Family,Who can stay?,1,1,1,1
+Demography,Girls,Who can stay?,1,1,1,1
+Demography,Open to all,Who can stay?,1,1,1,1
+Water Problems,Shared Motor,Water problems:,IF(Ans(8) is YES),IF(Ans(8) is YES),IF(Ans(8) is YES),IF(Ans(8) is YES)
+Water Problems,Shared Water Tank,Water problems:,IF(Ans(8) is YES),IF(Ans(8) is YES),IF(Ans(8) is YES),IF(Ans(8) is YES)
+Water Problems,Lack of 24x7 Water Supply,Water problems:,IF(Ans(8) is YES),IF(Ans(8) is YES),IF(Ans(8) is YES),IF(Ans(8) is YES)
+Water Problems,Bad Quality of Water,Water problems:,IF(Ans(8) is YES),IF(Ans(8) is YES),IF(Ans(8) is YES),IF(Ans(8) is YES)
+Water Problems,Depends on Municipal Supply/Tankers,Water problems:,IF(Ans(8) is YES),IF(Ans(8) is YES),IF(Ans(8) is YES),IF(Ans(8) is YES)
+Neighbours,Noisy,Are the Neighbours...,1,1,0,0
+Neighbours,Intrusive,Are the Neighbours...,1,1,0,0
+Neighbours,Friendly,Are the Neighbours...,1,1,0,0
+Neighbours,Indifferent,Are the Neighbours...,1,1,0,0
+Neighbours,Eve-Teaser,Are the Neighbours...,1,1,0,0
+Neighbours,Noisy,Are the PG mates...,0,0,1,1
+Neighbours,Intrusive,Are the PG mates...,0,0,1,1
+Neighbours,Friendly,Are the PG mates...,0,0,1,1
+Neighbours,Indifferent,Are the PG mates...,0,0,1,1
+Neighbours,Eve-Teaser,Are the PG mates...,0,0,1,1
+Payment Method,Cash,What is the payment method for Rent?,0,1,1,1
+Payment Method,Cheque,What is the payment method for Rent?,0,1,1,1
+Payment Method,I-Banking,What is the payment method for Rent?,0,1,1,1
+Problems,Leakage/Seepage,Living Problems [1/2],1,1,1,1
+Power Supply,Excessive Power-Cuts,How is the Power Supply?,1,1,1,1
+Power Supply,Erratic,How is the Power Supply?,1,1,1,1
+Power Supply,Seasonal,How is the Power Supply?,1,1,1,1
+Power Supply,Regular,How is the Power Supply?,1,1,1,1
+Power Supply,Power Backup Available,How is the Power Supply?,1,1,1,1
+Problems,Poor Drainage,Living Problems [1/2],1,1,1,1
+Problems,No Western Toilet,Living Problems [1/2],1,1,1,1
+Problems,Sanitation Problems,Living Problems [1/2],1,1,1,1
+Problems,Poor Ventilation,Living Problems [1/2],1,1,1,1
+Problems,Bad Maintenance,Living Problems [1/2],1,1,1,1
+Problems,No Sunlight,Living Problems [2/2],1,1,1,1
+Problems,No Balcony View,Living Problems [2/2],1,1,1,1
+Problems,Pests,Living Problems [2/2],1,1,1,1
+Problems,Termites,Living Problems [2/2],1,1,1,1
+Problems,No lift (3rd floor or above),Living Problems [2/2],1,1,1,1
+Problems,Bad Mobile Network,Living Problems [2/2],1,1,1,1
+Problems,Bad Food,Living Problems [2/2],0,0,1,1
+Facilities/Essentials,Cupboards,Facilities/Essentials [1/2],1,1,1,1
+Facilities/Essentials,Bed,Facilities/Essentials [1/2],1,1,1,1
+Facilities/Essentials,Gas Connection,Facilities/Essentials [1/2],1,1,1,1
+Facilities/Essentials,"Fittings, Padlocks etc",Facilities/Essentials [1/2],1,1,1,1
+Facilities/Essentials,TV,Facilities/Essentials [2/2],1,1,1,1
+Facilities/Essentials,AC,Facilities/Essentials [2/2],1,1,1,1
+Facilities/Essentials,Refrigerator,Facilities/Essentials [2/2],1,1,1,1
+Facilities/Essentials,Parking,Facilities/Essentials [2/2],1,1,1,1
+Characteristics of Landlord,Water Fussy,Landlord is,0,1,1,1
+Characteristics of Landlord,Money Fussy,Landlord is,0,1,1,1
+Characteristics of Landlord,Interfering,Landlord is,0,1,1,1
+Characteristics of Landlord,Helpful and Caring,Landlord is,0,1,1,1
+Characteristics of Landlord,Indifferent,Landlord is,0,1,1,1
+Overview of Locality,Unsafe for Women,Overview of the Locality [1/2],1,1,1,1
+Overview of Locality,Crime Prone,Overview of the Locality [1/2],1,1,1,1
+Overview of Locality,Visitor Parking Unavailable,Overview of the Locality [1/2],1,1,1,1
+Overview of Locality,Improper Roads,Overview of the Locality [1/2],1,1,1,1
+Overview of Locality,Door-step Car Inaccessibility,Overview of the Locality [1/2],1,1,1,1
+Overview of Locality,Older Demography,Overview of the Locality [2/2],1,1,1,1
+Overview of Locality,No Grocery Shops Nearby,Overview of the Locality [2/2],1,1,1,1
+Overview of Locality,Traffic/Transport Noise,Overview of the Locality [2/2],1,1,1,1
+Overview of Locality,Waterlogging Problem,Overview of the Locality [2/2],1,1,1,1
+Overview of Locality,Public Transport Too Far,Overview of the Locality [2/2],1,1,1,1
+Landlord's Residence,Yes,Is the landlord staying in the same house?,0,1,0,0
+Landlord's Residence,No,Is the landlord staying in the same house?,0,1,0,0
+Allowed,Pets,Are Pets allowed?,1,1,1,1
+Allowed,Coming-In Late-Night,Is Coming In Late-Night allowed?,1,1,1,1
+Allowed,Playing Loud Music,Is Playing Loud Music allowed?,1,1,1,1
+Warden's Residence,Yes,Is the warden staying in the same house?,0,0,1,1
+Warden's Residence,No,Is the warden staying in the same house?,0,0,1,1
+Allowed,Live-In,Is Live-In allowed?,1,1,1,1
+Allowed,Drinking,Is Drinking allowed?,1,1,1,1
+Allowed,Cooking Non-Veg,Is Cooking Non-Veg allowed?,1,1,1,1
+Allowed,Smoking,Is Smoking allowed?,1,1,1,1
+Allowed,Partying,Is Partying allowed?,1,1,1,1
+Allowed,Friends Coming Over,Is Friends Coming Over allowed?,1,1,1,1
+Allowed,Family Coming Over,Is Family Coming Over allowed?,1,1,1,1
+User Rating,Excellent,Excellent,1,1,1,1
+User Rating,Average,Average,1,1,1,1
+User Rating,Poor,Poor,1,1,1,1

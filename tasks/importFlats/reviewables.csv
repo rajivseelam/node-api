@@ -1,0 +1,25 @@
+Title,Description,Owner,Tenant,Paying Guest,Hosteller
+Reviewer,You are reviewing,1,1,1,1
+Type of Residents,Resident is,1,1,1,1
+Duration,Duration,1,1,1,1
+Rent,Rent,0,1,1,1
+Number of Residents,Number of residents,1,1,0,0
+Number of Roommates,Number of roommates,0,0,1,1
+Number of Rooms,Type of Flat,1,1,0,0
+Demography,Who can stay?,1,1,1,1
+Water Problems,Are there any Water Problems?,1,1,1,1
+Water Problems,Water problems:,IF(Ans(8) is YES),IF(Ans(8) is YES),IF(Ans(8) is YES),IF(Ans(8) is YES)
+Neighbours,Neighbours,1,1,0,0
+Neighbours,Neighbours,0,0,1,1
+Payment Method,What is the payment method for Rent?,0,1,1,1
+Problems,Living Problems,1,1,1,1
+Power Supply,How is the Power Supply?,1,1,1,1
+Problems,Living Problems,0,0,1,1
+Facilities/Essentials,Facilities/Essentials,1,1,1,1
+Characteristics of Landlord,Landlord is,0,1,1,1
+Overview of Locality,Overview of the Locality,1,1,1,1
+Landlord's Residence,Is the landlord staying in the same house?,0,1,0,0
+Allowed,Allowed,1,1,1,1
+Additional Remarks,Restrictions,1,1,1,1
+Warden's Residence,Additional Remarks,0,0,1,1
+User Rating,User Rating,1,1,1,1

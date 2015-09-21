@@ -1,0 +1,122 @@
+<div layout="row" layout-margin layout-padding ng-if="reviews.length > 0">
+    <md-sidenav class="md-sidenav-left md-whiteframe-z4" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" nav-height>
+        <md-toolbar class="md-theme-indigo">
+            <h1 class="md-toolbar-tools">New Review items</h1>
+        </md-toolbar>
+        <md-content nav-height>
+            <section layout="column" layout-padding layout-padding flex>
+                <div layout="row">
+                    <div>
+                        <md-checkbox ng-model="tags.all" aria-label="Select All" ng-change="addBulkToSelected(reviews)">
+                            Select All
+                        </md-checkbox>
+                    </div>
+                    <div>
+                        <!-- <md-button ng-show="tags.all" md-no-ink class="md-primary">Import All</md-button> -->
+                        <md-button ng-show="selected.length > 1" md-no-ink class="md-primary" ng-click="exportBatchReviews()">Import Selected</md-button>
+                    </div>
+                </div>
+                <md-divider></md-divider>
+                <md-list layout-padding>
+                    <md-list-item class="md-3-line" ng-repeat="item in reviews track by $index" ng-click="selectUserIndex($index)">
+                        <md-checkbox ng-disabled="false" flex="10" ng-checked="exists(item.id, selected)" ng-click="toggle(item.id, selected)" layout-padding layout-margin>
+                        </md-checkbox>
+                        <div class="md-list-item-text" flex="63">
+                            <h3>{{ item.user.full_name }}</h3>
+                            <h4>{{ item.remarks}}</h4>
+                            <p>{{ item.created_at | dateFormat }}</p>
+                        </div>
+                        <md-divider></md-divider>
+                    </md-list-item>
+                </md-list>
+            </section>
+        </md-content>
+    </md-sidenav>
+    <md-content flex class="md-whiteframe-z3" layout-gt-sm="column" layout-padding layout-margin>
+        <md-subheader class="md-no-sticky">Viewing Temp Review Created By {{selectedItem.user.username}}</md-subheader>
+        <div layout="column" layout-padding layout-margin>
+            <div layout="column" layout-padding layout-margin>
+                <section id="creator" layout="column" layout-padding>
+                    <p class="md-subhead"><b>Created By:</b> {{selectedItem.user.full_name}}</p>
+                    <div layout="row">
+                        <md-chips>
+                            <md-chip><b>Created At:</b> {{selectedItem.created_at | dateFormat}}</md-chip>
+                        </md-chips>
+                        <md-chips>
+                            <md-chip><b>Updated At:</b> {{selectedItem.updated_at | dateFormat}}</md-chip>
+                        </md-chips>
+                    </div>
+                    <p class="md-subhead">Stay Timeline</p>
+                    <div layout="row">
+                        <md-chips>
+                            <md-chip><b>Moved In On: </b>{{selectedItem.moved_in_on | dateFormat}}</md-chip>
+                        </md-chips>
+                        <md-chips>
+                            <md-chip><b>Moved Out On: </b>{{selectedItem.moved_out_on| dateFormat}}</md-chip>
+                        </md-chips>
+                    </div>
+                    <p class="md-subhead">Flat Ratings</p>
+                    <div layout="row">
+                        <md-chips>
+                            <md-chip><b>User rating:</b> {{selectedItem.user_rating }}</md-chip>
+                        </md-chips>
+                        <md-chips>
+                            <md-chip><b>Flatabout rating:</b> {{selectedItem.flatabout_rating }}</md-chip>
+                        </md-chips>
+                    </div>
+                    <h2 class="md-subhead" ng-if="selectedItem.tags">Selected Tags.</h2>
+                    <div layout="row">
+                        <md-chips>
+                            <md-chip ng-repeat="tag in selectedItem.tags">{{tag.title}}</md-chip>
+                        </md-chips>
+                    </div>
+                </section>
+            </div>
+            <div layout="column" layout-padding layout-margin>
+                <!-- Map marker with lat lang -->
+                <p class="md-subhead">Address</p>
+                <div layout="column">
+                    <md-chips>
+                        <md-chip><b>Full: </b>{{selectedItem.address.full}}</md-chip>
+                        <md-chip><b>Flat #: </b>{{selectedItem.address.flat_number}}</md-chip>
+                        <md-chip><b>Locality: </b>{{selectedItem.address.locality}}</md-chip>
+                        <md-chip><b>Pincode: </b>{{selectedItem.address.pincode}}</md-chip>
+                    </md-chips>
+                </div>
+                <p class="md-subhead">Additional Info</p>
+                <div layout="column">
+                    <md-chips>
+                        <md-chip><b>Remarks: </b>{{selectedItem.remarks}}</md-chip>
+                        <md-chip><b>Rent: </b>{{selectedItem.rent}}</md-chip>
+                        <md-chip><b>Review ID: </b>{{selectedItem.review_id}}</md-chip>
+                        <md-chip><b>Payment Method: </b>{{selectedItem.payment_method}}</md-chip>
+                        <md-chip><b>Is Anon: </b>{{selectedItem.make_anonymous}}</md-chip>
+                        <md-chip><b>lat: </b>{{selectedItem.lat}}</md-chip>
+                        <md-chip><b>lon: </b>{{selectedItem.lon}}</md-chip>
+                    </md-chips>
+                </div>
+            </div>
+            <div layout="row" layout-align="end end" style="position: absolute;bottom: 1%;right: 1%;">
+                <md-fab-speed-dial md-open="demo.isOpen" md-direction="{{demo.selectedDirection}}" ng-class="demo.selectedMode">
+                    <md-fab-trigger>
+                        <md-button aria-label="menu" class="md-fab md-warn">
+                            <ng-md-icon icon="menu" style="fill:white"></ng-md-icon>
+                        </md-button>
+                    </md-fab-trigger>
+                    <md-fab-actions>
+                        <md-button aria-label="approve" class="md-fab md-raised md-mini md-" action-state review="{{selectedItem.id}}" index="{{selectedItem.index}}" ng-click="action()">
+                            <ng-md-icon icon="check_circle"></ng-md-icon>
+                        </md-button>
+                        <md-button aria-label="anon" class="md-fab md-raised md-mini" ng-disabled="true">
+                            <ng-md-icon icon="mode_edit"></ng-md-icon>
+                        </md-button>
+                        <md-button aria-label="reject" class="md-fab md-raised md-mini" delete-review review="{{selectedItem.id}}" index="{{selectedItem.index}}" ng-click="actionDelete()">
+                            <ng-md-icon icon="delete"></ng-md-icon>
+                        </md-button>
+                    </md-fab-actions>
+                </md-fab-speed-dial>
+            </div>
+        </div>
+    </md-content>
+</div>
+<h1 class="md-display-3" offset="33" ng-if="reviews.length == 0">Thats all folks!</h1>

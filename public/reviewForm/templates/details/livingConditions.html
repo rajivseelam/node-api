@@ -1,0 +1,257 @@
+<div ng-controller="details.livingConditions" layout="column">
+  <h1 flex class="md-title text-center heading">Step {{stepNumber}} of {{parts.length}}</h1>
+
+  <div flex class="animate-show" ng-show="waterProblemsExist.show">
+    <md-card flex>
+      <md-card-content>
+        <h2 class="md-title brand-color">
+          Are there any Water Problems
+        </h2>
+        
+        <md-radio-group ng-model="waterProblemsExist.val" ng-change="waterProblemsExist.show = false && waterProblemsExist.setText()">
+          <md-radio-button ng-repeat="opt in waterProblemsExist.options" ng-value="opt.val" aria-label="{{opt.title}}">
+            <span ng-class="{'brand-color': opt.val === waterProblemsExist.val}">{{opt.title}}</span>
+          </md-radio-button>
+        </md-radio-group>
+
+      </md-card-content>
+    </md-card>
+  </div>
+
+  <div flex class="animate-show" ng-show="waterProblems.show">
+    <md-card>
+      <md-card-content layout="column">
+        <h2 flex class="md-title brand-color">
+          Water Problems:
+        </h2>
+
+        <fieldset flex layout="row" layout-wrap>
+          <div flex ng-repeat="opt in waterProblems.options">
+            <md-checkbox ng-checked="waterProblems.isItemListed(opt)" ng-click="waterProblems.toggleItem(opt)"
+              aria-label="{{opt.title}}"
+            >
+              <span ng-class="{'brand-color': waterProblems.isItemListed(opt)}">{{opt.title}}</span>
+            </md-checkbox>
+          </div>
+        </fieldset>
+
+        <md-button flex class="md-raised md-cornered md-primary brand-btn" ng-click="waterProblems.show = false">Done</md-button>
+      </md-card-content>
+    </md-card>
+  </div>
+
+  <div flex class="animate-show" ng-show="powerSupply.show">
+    <md-card>
+      <md-card-content>
+        <h2 class="md-title brand-color">
+          How is the Power Supply:
+        </h2>
+
+        <md-radio-group ng-model="powerSupply.val" ng-change="powerSupply.show = false && powerSupply.setText()">
+          <md-radio-button ng-repeat="opt in powerSupply.options" ng-value="opt.val" aria-label="{{opt.title}}">
+            <span ng-class="{'brand-color': powerSupply.val === opt.val}">{{opt.title}}</span>
+          </md-radio-button>
+        </md-radio-group>
+
+      </md-card-content>
+    </md-card>
+  </div>
+
+  <div flex class="animate-show" ng-show="livingProblems.show.first">
+    <md-card>
+      <md-card-content layout="column">
+        <h2 flex class="md-title brand-color">
+          Living Problems (1/2):
+        </h2>
+
+        <fieldset flex layout="column" layout-wrap>
+          <div flex ng-repeat="opt in livingProblems.options.first">
+            <md-checkbox ng-checked="livingProblems.isItemListed(opt)" ng-click="livingProblems.toggleItem(opt)"
+              aria-label="{{opt.title}}"
+            >
+              <span ng-class="{'brand-color': livingProblems.isItemListed(opt)}">{{opt.title}}</span>
+            </md-checkbox>
+          </div>
+        </fieldset>
+
+        <md-button flex class="md-raised md-cornered md-primary brand-btn" ng-click="livingProblems.show.first = false">Done</md-button>
+      </md-card-content>
+    </md-card>
+  </div>
+
+  <div flex class="animate-show" ng-show="livingProblems.show.second">
+    <md-card>
+      <md-card-content layout="column">
+        <h2 flex class="md-title brand-color">
+          Living Problems (2/2):
+        </h2>
+
+        <fieldset flex layout="row" layout-wrap>
+          <div flex ng-repeat="opt in livingProblems.options.second">
+            <md-checkbox ng-checked="livingProblems.isItemListed(opt)" ng-click="livingProblems.toggleItem(opt)"
+              aria-label="{{opt.title}}"
+            >
+              <span ng-class="{'brand-color': livingProblems.isItemListed(opt)}">{{opt.title}}</span>
+            </md-checkbox>
+          </div>
+        </fieldset>
+
+        <md-button flex class="md-raised md-cornered md-primary brand-btn" ng-click="livingProblems.show.second = false">Done</md-button>
+      </md-card-content>
+    </md-card>
+  </div>
+
+  <div flex class="animate-show" ng-show="facilities.show.first">
+    <md-card>
+      <md-card-content layout="column">
+        <h2 flex class="md-title brand-color">
+          Facilities/Essentials (1/2):
+        </h2>
+
+        <fieldset flex layout="row" layout-wrap>
+          <div flex ng-repeat="opt in facilities.options.first">
+            <md-checkbox ng-checked="facilities.isItemListed(opt)" ng-click="facilities.toggleItem(opt)"
+              aria-label="{{opt.title}}"
+            >
+              <span ng-class="{'brand-color': facilities.isItemListed(opt)}">{{opt.title}}</span>
+            </md-checkbox>
+          </div>
+        </fieldset>
+
+        <md-button flex class="md-raised md-cornered md-primary brand-btn" ng-click="facilities.show.first = false">Done</md-button>
+      </md-card-content>
+    </md-card>
+  </div>
+
+  <div flex class="animate-show" ng-show="facilities.show.second">
+    <md-card>
+      <md-card-content layout="column">
+        <h2 flex class="md-title brand-color">
+          Facilities/Essentials (2/2):
+        </h2>
+
+        <fieldset flex layout="row" layout-wrap>
+          <div flex ng-repeat="opt in facilities.options.second">
+            <md-checkbox ng-checked="facilities.isItemListed(opt)" ng-click="facilities.toggleItem(opt)"
+              aria-label="{{opt.title}}"
+            >
+              <span ng-class="{'brand-color': facilities.isItemListed(opt)}">{{opt.title}}</span>
+            </md-checkbox>
+          </div>
+        </fieldset>
+
+        <md-button flex class="md-raised md-cornered md-primary brand-btn" ng-click="facilities.show.second = false">Done</md-button>
+      </md-card-content>
+    </md-card>
+  </div>
+
+  <div flex class="animate-show" ng-show="landlordCharacteristics.show">
+    <md-card>
+      <md-card-content layout="column">
+        <h2 flex class="md-title brand-color">
+          Landlord Is..
+        </h2>
+
+        <fieldset flex layout="row" layout-wrap>
+          <div flex ng-repeat="opt in landlordCharacteristics.options">
+            <md-checkbox ng-checked="landlordCharacteristics.isItemListed(opt)"
+              ng-click="landlordCharacteristics.toggleItem(opt)"
+              aria-label="{{opt.title}}"
+            >
+              <span ng-class="{'brand-color': landlordCharacteristics.isItemListed(opt)}">{{opt.title}}</span>
+            </md-checkbox>
+          </div>
+        </fieldset>
+
+        <md-button flex class="md-raised md-cornered md-primary brand-btn" ng-click="landlordCharacteristics.show = false">Done</md-button>
+      </md-card-content>
+    </md-card>
+  </div>
+
+  <div flex class="animate-show" ng-show="localityOverview.show.first">
+    <md-card>
+      <md-card-content layout="column">
+        <h2 flex class="md-title brand-color">
+          Overview of Locality (1/2):
+        </h2>
+
+        <fieldset flex layout="row" layout-wrap>
+          <div flex ng-repeat="opt in localityOverview.options.first">
+            <md-checkbox ng-checked="localityOverview.isItemListed(opt)" ng-click="localityOverview.toggleItem(opt)"
+              aria-label="{{opt.title}}"
+            >
+              <span ng-class="{'brand-color': localityOverview.isItemListed(opt)}">{{opt.title}}</span>
+            </md-checkbox>
+          </div>
+        </fieldset>
+
+        <md-button flex class="md-raised md-cornered md-primary brand-btn" ng-click="localityOverview.show.first = false">Done</md-button>
+      </md-card-content>
+    </md-card>
+  </div>
+
+  <div flex class="animate-show" ng-show="localityOverview.show.second">
+    <md-card>
+      <md-card-content layout="column">
+        <h2 flex class="md-title brand-color">
+          Overview of Locality (2/2):
+        </h2>
+
+        <fieldset flex layout="row" layout-wrap>
+          <div flex ng-repeat="opt in localityOverview.options.second">
+            <md-checkbox ng-checked="localityOverview.isItemListed(opt)" ng-click="localityOverview.toggleItem(opt)"
+              aria-label="{{opt.title}}"
+            >
+              <span ng-class="{'brand-color': localityOverview.isItemListed(opt)}">{{opt.title}}</span>
+            </md-checkbox>
+          </div>
+        </fieldset>
+
+        <md-button flex class="md-raised md-cornered md-primary brand-btn" ng-click="localityOverview.show.second = false">Done</md-button>
+      </md-card-content>
+    </md-card>
+  </div>
+
+  <div flex class="animate-show" ng-show="neighbours.show">
+    <md-card>
+      <md-card-content layout="column">
+        <h2 flex class="md-title brand-color">
+          Are the Neighbours: 
+        </h2>
+
+        <fieldset flex layout="row" layout-wrap>
+          <div flex ng-repeat="opt in neighbours.options">
+            <md-checkbox ng-checked="neighbours.isItemListed(opt)" ng-click="neighbours.toggleItem(opt)"
+              aria-label="{{opt.title}}"
+            >
+              <span ng-class="{'brand-color': localityOverview.isItemListed(opt)}">{{opt.title}}</span>
+            </md-checkbox>
+          </div>
+        </fieldset>
+
+        <md-button flex class="md-raised md-cornered md-primary brand-btn" ng-click="neighbours.show = false">Done</md-button>
+      </md-card-content>
+    </md-card>
+  </div>
+  <div flex class="animate-show" ng-show="rentPayment.show">
+    <md-card>
+      <md-card-content layout="column">
+        <h2 flex class="md-title brand-color">
+          Payment Methods:
+        </h2>
+
+        <fieldset flex layout="row" layout-wrap>
+          <div flex ng-repeat="opt in rentPayment.options">
+            <md-checkbox ng-checked="rentPayment.isItemListed(opt)" ng-click="rentPayment.toggleItem(opt)"
+              aria-label="{{opt.title}}"
+            >
+              <span ng-class="{'brand-color': rentPayment.isItemListed(opt)}">{{opt.title}}</span>
+            </md-checkbox>
+          </div>
+        </fieldset>
+
+        <md-button flex class="md-raised md-cornered md-primary brand-btn" ng-click="rentPayment.show = false">Done</md-button>
+      </md-card-content>
+    </md-card>
+  </div>
+</div>

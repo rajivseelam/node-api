@@ -1,0 +1,53 @@
+<div ng-controller="details.residence" layout="column" class="cards">
+  <h1 flex class="md-title text-center heading">Step {{stepNumber}} of {{parts.length}}</h1>
+
+  <div flex class="animate-show" ng-show="numPeople.show">
+    <md-card>
+      <md-card-content>
+        <h2 class="md-title brand-color">
+          Number of Residents:
+        </h2>
+        
+        <md-radio-group ng-model="numPeople.val" ng-change="numPeople.show = false && numPeople.setText()">
+          <md-radio-button ng-repeat="opt in numPeople.options" ng-value="opt.val" aria-label="opt.title">
+            <span ng-class="{'brand-color': opt.val === numPeople.val}">{{opt.title}}</span>
+          </md-radio-button>
+        </md-radio-group>
+
+      </md-card-content>
+    </md-card>
+  </div>
+  <div flex class="animate-show" ng-show="flatType.show">
+    <md-card>
+      <md-card-content>
+        <h2 class="md-title brand-color">
+          Type of Flat:
+        </h2>
+    
+        <md-radio-group ng-model="flatType.val" ng-change="flatType.show = false && flatType.setText()">
+          <md-radio-button ng-repeat="opt in flatType.options" ng-value="opt.val" aria-label="opt.title">
+            <span ng-class="{'brand-color': opt.val === flatType.val}">{{opt.title}}</span>
+          </md-radio-button>
+        </md-radio-group>
+
+      </md-card-content>
+    </md-card>
+  </div>
+
+  <div flex class="animate-show" ng-show="demography.show">
+    <md-card>
+      <md-card-content>
+        <h2 class="md-title brand-color">
+          Who Can Stay:
+        </h2>
+    
+        <md-radio-group ng-model="demography.val" ng-change="demography.show = false && demography.setText()">
+          <md-radio-button ng-repeat="opt in demography.options" ng-value="opt.val" aria-label="opt.title">
+            <span ng-class="{'brand-color': opt.val === demography.val}">{{opt.title}}</span>
+          </md-radio-button>
+        </md-radio-group>
+
+      </md-card-content>
+    </md-card>
+  </div>
+</div>

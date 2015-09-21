@@ -1,0 +1,22 @@
+<div id="content" layout="row" layout-padding layout-margin layout-align="center center">
+    <md-content layout="column" layout-padding layout-margin flex="45" flex-sm="66" offset="66">
+        <md-card layout-padding layout-margin flex-sm="66"  flex="45" offset="66">
+            <md-toolbar layout="row">
+                <div class="md-toolbar-tools">
+                    <h1>Admin Login</h1>
+                </div>
+            </md-toolbar>
+            <form name="loginForm" layout-padding layout-margin>
+                <md-input-container layout-padding layout-margin>
+                    <input ng-model="user.email" name="email" type="email" placeholder="Email (required)" ng-required="true">
+                </md-input-container>
+                <md-input-container layout-padding layout-margin>
+                    <input ng-model="user.password" name="password" type="password" placeholder="Password (required)" ng-required="true">
+                </md-input-container>
+            </form>
+            <div class="md-actions" layout="row" layout-align="center center" ng-click="login()">
+                <md-button class="md-raised md-primary">Login</md-button>
+            </div>
+        </md-card>
+    </md-content>
+</div>

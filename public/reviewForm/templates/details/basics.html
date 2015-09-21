@@ -1,0 +1,70 @@
+<div ng-controller="details.basics" layout="column" class="basics">
+  <div class="info-bar">
+    <h1 flex class="md-title text-center heading">Step {{stepNumber}} of {{parts.length}}</h1>
+  </div>
+
+  <div flex class="animate-show" ng-show="reviewer.show">
+    <md-card>
+      <md-card-content>
+        <h2 class="md-title brand-color">
+          You are Reviewing:
+        </h2>
+
+        <md-radio-group ng-model="reviewer.slug" ng-change="reviewer.show = false && reviewer.setModel()">
+          <md-radio-button ng-repeat="opt in reviewer.options" ng-value="opt.slug" aria-label="opt.title">
+            <span ng-class="{'brand-color': (opt.slug === reviewer.slug)}">{{opt.title}}</span>
+          </md-radio-button>
+        </md-radio-group>
+      </md-card-content>
+    </md-card>
+  </div>
+
+  <div flex class="animate-show" ng-show="resident.show">
+    <md-card>
+      <md-card-content>
+        <h2 class="md-title brand-color">
+          Resident is:
+        </h2>
+        
+        <md-radio-group ng-model="resident.slug" ng-change="resident.show = false && resident.setModel()">
+          <md-radio-button ng-repeat="opt in resident.options" ng-value="opt.slug" aria-label="opt.title">
+            <span ng-class="{'brand-color': (opt.slug === resident.slug)}">{{opt.title}}</span>
+          </md-radio-button>
+        </md-radio-group>
+      </md-card-content>
+    </md-card>
+  </div>
+
+  <div flex class="animate-show" ng-show="stayDuration.show">
+    <md-card>
+      <md-card-content>
+        <h2 class="md-title brand-color">
+          Duration of your Stay:
+        </h2>
+
+        <p><span class="brand-color">{{stayDuration.text}}</span></p>
+
+        <md-slider min="0" max="37" ng-model="stayDuration.monthsAgo"
+          aria-label="Stay Duration" ng-change="stayDuration.calculateText()">
+        </md-slider>
+        <md-button flex class="md-raised md-cornered md-primary brand-btn" ng-click="stayDuration.show = false">Done</md-button>
+      </md-card-content>
+    </md-card>
+  </div>
+  
+  <div flex class="animate-show" ng-show="askRent && rent.show">
+    <md-card>
+      <md-card-content>
+        <h2 class="md-title brand-color">
+          Rent: <span class="brand-color">{{rent.text}}</span>
+        </h2>
+        <form ng-submit="rent.show = false">
+          <md-input-container>
+            <input required type="number" step="any" name="rent" ng-model="rent.val" ng-change="rent.setText()" aria-label="Rent">
+          </md-input-container>
+          <md-button flex class="md-raised md-cornered md-primary brand-btn">Done</md-button>
+        </form>
+      </md-card-content>
+    </md-card>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="background"></div>
+
+<div layout="column" class="wrapper" layout-padding ng-if="reviewablesLoaded">
+
+  <div flex ng-repeat="part in parts track by $index"
+      ng-init="stepNumber = $index + 1" class="animate-show"
+      ng-show="progress.step == stepNumber"
+  >
+    <ng-include src="part.tmpl" >
+    </ng-include>
+  </div>
+
+</div>
